@@ -16,71 +16,136 @@
         android:layout_centerInParent="true"
         android:orientation="vertical"
         android:gravity="center">
+
         <EditText
             android:id="@+id/firstInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="First Input"/>
+            android:hint="First Input"
+            android:inputType="numberDecimal"/>
         <LinearLayout
             android:id="@+id/operationLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
+
             <Button
                 android:id="@+id/operation_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+"/>
+                android:onClick="onClick"
+                android:text="@string/add"/>
+
             <Button
                 android:id="@+id/operation_sub"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="-"/>
+                android:onClick="onClick"
+                android:text="@string/subtract"/>
+
             <Button
                 android:id="@+id/operation_multi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="x"/>
+                android:onClick="onClick"
+                android:text="@string/multiply"/>
+
             <Button
                 android:id="@+id/operation_div"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="/"/>
+                android:onClick="onClick"
+                android:text="@string/divide"/>
         </LinearLayout>
+
         <EditText
             android:id="@+id/secondInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Second Input"/>
+            android:hint="Second Input"
+            android:inputType="numberDecimal"/>
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/extraFunctionsLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/SimpleCalcLayout"
         android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Extra functions:"/>
-        <Button
-            android:id="@+id/operation_extra1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="func1"/>
-        <Button
-            android:id="@+id/operation_extra2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="func2"/>
-        <Button
-            android:id="@+id/operation_extra3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="func3"/>
+            android:layout_gravity="center_horizontal"
+            android:text="Extra functions:"
+            android:textSize="18sp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/operation_exponent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:text="@string/exponent"/>
+
+                    <Button
+                        android:id="@+id/operation_log"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:text="@string/log"/>
+
+                    <Button
+                        android:id="@+id/operation_sin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:text="@string/sin"/>
+
+                    <Button
+                        android:id="@+id/operation_cos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:text="@string/cos"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/operation_tan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:text="@string/tan"/>
+
+                    <Button
+                        android:id="@+id/test"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:text="@string/test"/>
+                </TableRow>
+
+            </TableLayout>
+        </ScrollView>
 
 
     </LinearLayout>
